@@ -1,0 +1,27 @@
+<!DOCTYPE web-app PUBLIC
+ "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+ "http://java.sun.com/dtd/web-app_2_3.dtd" >
+
+<web-app>
+  <!--基于web.xml使用配置文件-->
+
+  <display-name>Archetype Created Web Application</display-name>
+  <!--定义servlet标签相当于配置webServlet中的name、loadOnStartup、initParams-->
+  <servlet>
+    <servlet-name>springmvc</servlet-name>
+    <servlet-class>com.baidu.controller.UserServlet</servlet-class>
+    <!--初始化参数及设置initParams中的name,value的值-->
+    <init-param>
+      <param-name>load</param-name>
+      <param-value>abc.xml</param-value>
+    </init-param>
+    <!--启动加载优先级-->
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+
+<!--设置urlPatterns的值-->
+  <servlet-mapping>
+    <servlet-name>springmvc</servlet-name><!--这里与上面的servlet标签中的servlet-name保持一致-->
+    <url-pattern>/iuser</url-pattern>
+  </servlet-mapping>
+</web-app>
